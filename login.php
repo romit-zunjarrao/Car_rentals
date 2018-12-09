@@ -55,7 +55,7 @@ if (!empty($_POST)) {
                 // you can directly pass the values into the array as well.
 
                 $_SESSION["ThisUser"] = $loggedInUser;
-
+                header("Location: http://localhost/Final%20Project/display_car.php");
                 //now that a session for this user is created
                 //Redirect to this users account page
                 //header("Location: myaccount.php");
@@ -145,8 +145,8 @@ if (!empty($_POST)) {
 
         <ul>
             <a id="a" href="index.php">Home</a>
-            <a id="a" href="rental.php">Rentals</a>
-            <a id="a" href="login.php">Sign In</a>
+            <a id="a" href="display_car.php">Rentals</a>
+            <a id="a" href="SignUp.php">Sign Up</a>
         </ul>
         <pre>
 					<?php print_r($errors); ?>

@@ -204,7 +204,7 @@ function isUserLoggedIn()
 //Destroys a session as part of logout
 /**
  * @param $name
-
+*/
 function destroySession($name)
 {
     if (isset($_SESSION[$name])) {
@@ -212,7 +212,7 @@ function destroySession($name)
         unset($_SESSION[$name]);
     }
 }
-*/
+
 
 //Retrieve complete user information of all users
 /**
@@ -284,4 +284,58 @@ function getAllCar()
     }
 
     return $row;
+}
+
+function getCar($id)
+{
+
+    global $mysqli, $db_table_prefix;
+    $row=null;
+    $stmt = $mysqli->prepare("SELECT
+		id,
+		car_name,
+		car_mileage,
+		car_number,
+		company_name,
+		year,
+		availablity,
+		rate,
+		type
+		FROM " . $db_table_prefix . "car_info
+		WHERE
+		id = ?
+		LIMIT 1");
+    $stmt->bind_param("i", $id);
+
+    $stmt->execute();
+    $stmt->bind_result(
+        $id,$car_name,$car_mileage, $car_number, $company_name, $year, $availablity, $rate,$type
+    );
+    while($stmt->fetch())
+    {
+        $row[] = array(
+            'id'=>$id,
+            'car_name'=>$car_name,
+            'car_mileage'=>$car_mileage,
+            'car_number'=>$car_number,
+            'company_name'=>$company_name,
+            'year'=>$year,
+            'availability'=>$availablity,
+            'rate'=>$rate,
+            'type'=> $type
+        );
+    }
+    $stmt->close();
+    return $row;
+}
+
+function makeUnavailable($car_number)
+{
+    global $mysqli, $db_table_prefix;
+    $row=null;
+    $stmt = $mysqli->prepare("UPDATE car_info 
+    SET availablity='0' WHERE car_number = ?");
+    $stmt->bind_param("s", $car_number);
+
+    $stmt->execute();
 }

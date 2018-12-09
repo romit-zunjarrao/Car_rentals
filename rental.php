@@ -73,7 +73,7 @@ if(!isUserLoggedIn()){
     <div class="imagediv">
         <ul>
             <a id="a" href="index.php">Home</a>
-            <a id="a" href="rentals.html">Rentals</a>
+            <a id="a" href="rental.php">Rentals</a>
             <a id="a" href="signin.html">Sign In</a>
         </ul>
     </div>

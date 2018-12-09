@@ -71,9 +71,7 @@ if (!empty($_POST)) {
 <div id="wrapper">
     <div id="content">
         <h2>Register</h2>
-        <div id="left-nav">
-            <?php include("left-nav.php"); ?>
-        </div>
+
 
         <div id="main">
 

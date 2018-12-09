@@ -13,6 +13,7 @@ if (!ini_get('date.timezone')) {
 require_once("db-settings.php"); //Require DB connection
 require_once("function.php"); // database and other functions are written in this file
 require_once("User.php");
+include_once("car.php");
 
 session_start();
 
