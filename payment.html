@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>
+         East Coast Rentals
+        </title>
+        <style>
+        header{
+            width:100%;
+            height:40px;
+            color:#45A29E;
+            background-color: #1F2833;
+            font-size:30px;
+            text-align:center;
+        }
+        #a{
+            padding-left: 10px;
+            color:#66FCF1;
+            text-decoration:none;
+            font-size:20px;
+            text-align:center;
+        }       
+        #a:hover{
+            color:rgba(31, 113, 121, 0.87);
+        }
+
+        .maindiv{
+            background-color:  #1F2833 ;
+        }
+
+        .imagediv{
+            padding:15px;
+        }
+        
+        h1{
+        color:#66FCF1;
+        }
+
+        p{
+            font-size:20px;
+            color:#C5C6C7;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        button{
+            height:30px;
+            width:100px;
+            color:#66FCF1;
+            background-color: black;
+            border-color: black;
+        }
+        button:hover{
+            color:black;
+            background-color:white;
+            transition: 2s all;
+        }
+        footer{
+            width:100%;
+            height:30px;
+            color:#45A29E;
+            background-color: #1F2833;
+            font-size:20px;
+            text-align:right;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="maindiv">
+      <header>Enter Payment Details Below</header>
+      <p>Name on Card :</p>
+      <input type="textarea" value=" Name"><br>
+      <p>Bank :</p>
+      <input type="textarea" value="Bank Name"><br>
+      <p>Card Expiration</p>
+      <input type="date" ><br>
+      <p>Cvv</p>
+      <input type="number" value="000"><br><br>
+      <center><button onclick="window.location.href='SelectCar.html'">Go Back</button>
+      <button  value="Rent" onclick="window.location.href='FinalPage.html'">Rent Car</button></center>
+    </div>
+    </body>
+</html>
