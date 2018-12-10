@@ -422,3 +422,54 @@ function updateCar($car_name,$car_mileage,$car_number,$company_name,$car_year,$a
     $stmt->close();
     return $result;
 }
+
+
+function deleteUser($id)
+{
+    global $mysqli, $db_table_prefix;
+    //Generate A random userid
+
+    $stmt = $mysqli->prepare(
+        "DELETE FROM userdetails WHERE userid = ?"
+    );
+    $stmt->bind_param("s", $id);
+    $result = $stmt->execute();
+    $stmt->close();
+    return $result;
+}
+
+function updateUser($fname, $lname, $city, $zip, $dob, $email, $userid)
+{
+    global $mysqli, $db_table_prefix;
+    $stmt = $mysqli->prepare(
+        "UPDATE " . $db_table_prefix . "userdetails
+		SET
+		FirstName = ?,
+		LastName = ?,
+		City = ?,
+		Zip = ?,
+		DateOfBirth = ?,
+		EmailAddress = ?
+		WHERE
+		userid = ?
+		LIMIT 1"
+    );
+    $stmt->bind_param("sssssss", $fname, $lname, $city, $zip, $dob, $email, $userid);
+    $result = $stmt->execute();
+    $stmt->close();
+
+    return $result;
+}
+
+function getUser($userid)
+{
+    global $mysqli, $db_table_prefix;
+    $stmt = $mysqli->prepare(
+        "Select * from userdetails WHERE userid= ? "
+    );
+    $stmt->bind_param("s",  $userid);
+    $result = $stmt->execute();
+    $stmt->close();
+
+    return $result;
+}

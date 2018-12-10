@@ -22,7 +22,7 @@ $allusers = fetchAllUsers();
         ?>
     <tr>
         <td>
-            <a href="updateThisUser.php?userid=<?php print $userdetails['UserID']; ?>"><?php print $userdetails['UserID']; ?></a>
+            <a href="updateSelectedUser.php?userid=<?php print $userdetails['UserID']; ?>"><?php print $userdetails['UserID']; ?></a>
         </td>
 
         <td><?php print $userdetails['UserName']; ?></td>
