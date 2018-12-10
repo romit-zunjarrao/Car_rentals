@@ -339,3 +339,86 @@ function makeUnavailable($car_number)
 
     $stmt->execute();
 }
+
+function addCar($car_name,$car_mileage,$company_name,$car_year,$rate,$availability,$car_number,$car_type)
+{
+    global $mysqli, $db_table_prefix;
+    //Generate A random userid
+
+    $stmt = $mysqli->prepare(
+        "INSERT INTO " . $db_table_prefix . "car_info (
+		car_name,
+		car_mileage,
+		car_number,
+		company_name,
+		year,
+		availablity,
+		rate,
+		type
+		)
+		VALUES (
+		?,
+		?,
+		?,
+		?,
+		?,
+		?,
+        ?,
+        ?
+		)"
+    );
+    $stmt->bind_param("ssssssss", $car_name, $car_mileage, $car_number, $company_name, $car_year,$availability,$rate,$car_type);
+    //print_r($stmt);
+    $result = $stmt->execute();
+    //print_r($result);
+    $stmt->close();
+    return $result;
+
+}
+
+function deleteCar($id)
+{
+    global $mysqli, $db_table_prefix;
+    //Generate A random userid
+
+    $stmt = $mysqli->prepare(
+        "DELETE FROM car_info WHERE id = ?"
+    );
+    $stmt->bind_param("i", $id);
+    //print_r($stmt);
+    $result = $stmt->execute();
+    //print_r($result);
+    $stmt->close();
+    return $result;
+}
+
+
+function updateCar($car_name,$car_mileage,$car_number,$company_name,$car_year,$availability,$rate,$car_type,$id)
+{
+    global $mysqli, $db_table_prefix;
+    //Generate A random userid
+
+    $stmt = $mysqli->prepare(
+        "UPDATE car_info
+        SET
+        car_name = ?,
+		car_mileage = ?,
+		car_number = ?,
+		company_name = ?,
+		year = ?,
+		availablity = ?,
+		rate = ?,
+		type= ?
+		WHERE id = ?
+        "
+    );
+
+
+    $stmt->bind_param("sissssssi", $car_name, $car_mileage, $car_number, $company_name, $car_year,$availability,$rate,$car_type,$id);
+
+    //print_r($stmt);
+    $result = $stmt->execute();
+    //print_r($result);
+    $stmt->close();
+    return $result;
+}

@@ -7,8 +7,6 @@
  */
 include_once("config.php");
 $car = $_SESSION['car'];
-print_r($car);
-print_r($_POST);
 $paymentName = $_POST['name'];
 $cardNumber = $_POST['card_number'];
 $Payment = $_POST['payment'];
@@ -78,8 +76,8 @@ makeUnavailable($car->car_number);
     <div class="imagediv">
         <ul>
             <a id="a" href="index.php">Home</a>
-            <a id="a" href="rental.php">Rentals</a>
-            <a id="a" href="signin.html">Sign In</a>
+            <a id="a" href="display_car.php">Rentals</a>
+            <a id="a" href="login.php">Sign In</a>
         </ul>
         <center><image src=" https://image.spreadshirtmedia.com/image-server/v1/mp/designs/1007217084,width=178,height=178/vroomvroom.png"></image></center>
     </div>
@@ -123,4 +121,5 @@ makeUnavailable($car->car_number);
 </div>
 <footer>&copy East Coast Rentals</footer>
 </body>
+<?php destroySession('ThisUser') ?>
 </html>

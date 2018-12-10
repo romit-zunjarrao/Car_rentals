@@ -50,7 +50,11 @@ if (!empty($_POST)) {
                 $loggedInUser->last_name = $userdetails["LastName"];
                 $loggedInUser->username = $userdetails["UserName"];
 
-
+                $firstname = $loggedInUser->first_name;
+                if($firstname=='admin') {
+                    header("Location: http://localhost/Final%20Project/managePage.php");
+                    die();
+                }
                 //pass the values of $loggedInUser into the session -
                 // you can directly pass the values into the array as well.
 

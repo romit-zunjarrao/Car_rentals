@@ -10,12 +10,8 @@
 //already included the code for connection to your mysql server and the functions are already available
 
 include_once("config.php");
-if($_SESSION['ThisUser']== null) {
-   header("Location: http://localhost/Final%20Project/login.php");
 
 
-
-}
 // call to function fetchAllUsers() from functions.php
 $allusers = getAllCar();
 
@@ -44,7 +40,7 @@ $allusers = getAllCar();
         ?>
 
         <tr>
-            <td><a href="car_selection.php?id=<?php print $userdetails['id']; ?>"><?php print $userdetails['id']; ?></a></td>
+            <td><a href="updateSelectedCar.php?id=<?php print $userdetails['id']; ?>"><?php print $userdetails['id']; ?></a></td>
             <td><?php print $userdetails['car_name']; ?></td>
             <td><?php print $userdetails['car_mileage']; ?></td>
             <td><?php print $userdetails['car_number']; ?></td>
