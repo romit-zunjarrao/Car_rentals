@@ -74,8 +74,8 @@ $allusers = getCar($id);
 
 
         </table>
-        <input type="submit" value="SELECT" class="button">
-        <a href="display_car.php"><input type="button" value="Go Back Car List" class="button"></a>
+        <center><input type="submit" value="SELECT" class="button">
+        <a href="display_car.php"><input type="button" value="Go Back Car List" class="button"></a></center>
 
     </form>
 

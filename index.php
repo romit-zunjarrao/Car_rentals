@@ -16,14 +16,14 @@
         header{
             width:100%;
             height:40px;
-            color:#45A29E;
+            color:#6699ff;
             background-color: #1F2833;
             font-size:30px;
             text-align:center;
         }
         #a{
             padding-left: 10px;
-            color:#66FCF1;
+            color:#6699ff;
             text-decoration:none;
             font-size:20px;
             text-align:center;
@@ -33,7 +33,15 @@
         }
 
         .maindiv{
-            background-color:  #1F2833 ;
+
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+
+
+        }
+        body {
+           margin: 0;
         }
 
         .imagediv{
@@ -41,12 +49,14 @@
         }
 
         h1{
-            color:#66FCF1;
+            color:#6699ff;
+            padding: 10px;
         }
-
+        img {padding: 30px}
         p{
-            font-size:20px;
-            color:#C5C6C7;
+            font-size:20px;padding: 15px;
+
+            color: #1F2833;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         footer{
@@ -65,9 +75,11 @@
 <div class="maindiv">
     <div class="imagediv">
         <ul>
+            <b>
             <a id="a" href="index.php">Home</a>
             <a id="a" href="display_car.php">Rentals</a>
             <a id="a" href="login.php">Sign In</a>
+            </b>
         </ul>
         <img src="http://thumbs4.ebaystatic.com/d/l300/pict/331907223074_1.jpg"></img>
         <img src="https://hips.hearstapps.com/pop.h-cdn.co/assets/cm/15/05/54cb0f3f86c57_-_2015-vw-gti-01-0413-de.jpg"></img>

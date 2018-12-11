@@ -67,8 +67,8 @@ if (!empty($_POST)) {
             </tr>
 
         </table>
-        <input type="submit" value="Add " class="button">
-        <a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a>
+        <center><input type="submit" value="Add " class="button">
+        <a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a></center>
 
     </form>
 </body>

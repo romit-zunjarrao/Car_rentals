@@ -102,20 +102,11 @@ if (!empty($_POST)) {
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
-        .maindiv{
-            background-color:  #1F2833 ;
-        }
+
         .imagediv{
             padding:15px;
         }
 
-        .signinform{
-            color:#66FCF1;
-        }
-
-        .signupform{
-            color:#66FCF1;
-        }
 
         footer{
             width:100%;
@@ -126,19 +117,15 @@ if (!empty($_POST)) {
             text-align:right;
         }
 
-        button{
-            height:30px;
-            width:100px;
-            color:#66FCF1;
-            background-color: black;
-            border-color: black;
-        }
+
         button:hover{
             color:black;
             background-color:white;
             transition: 2s all;
         }
     </style>
+    <title>Update Car</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>

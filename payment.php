@@ -16,6 +16,11 @@ $car->noOfDays = $_POST['noOfDays'];
 
 $_SESSION['car'] = $car;
 ?>
+<head>
+    <title>Manage User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <form action="FinalPage.php" method="post">
         <table>
             <tr>
@@ -39,9 +44,9 @@ $_SESSION['car'] = $car;
                 <td> <input type="text" value="<?php echo $car->rate*$car->noOfDays ?>" name="payment" readonly></td>
             </tr>
 
-            <tr>
-                <td><input type="submit"></td>
-            </tr>
-
         </table>
-    </form>
+   <center> <input type="submit" class="button">
+    <a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a></center>
+
+</form>
+</body>
