@@ -19,7 +19,8 @@ $allusers = getAllCar();
 
 <html>
 <head>
-    <title>Display Car</title>
+    <title>Manage Car's</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -39,7 +40,7 @@ $allusers = getAllCar();
         ?>
 
         <tr>
-            <td><a href="updateCar.php?id=<?php print $userdetails['id']; ?>"><?php print $userdetails['id']; ?></a></td>
+            <td><?php print $userdetails['id']; ?></td>
             <td><?php print $userdetails['car_name']; ?></td>
             <td><?php print $userdetails['car_mileage']; ?></td>
             <td><?php print $userdetails['car_number']; ?></td>
@@ -52,7 +53,10 @@ $allusers = getAllCar();
 
     <?php } ?>
 
+
+
 </table>
+<a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a>
 </body>
 
 

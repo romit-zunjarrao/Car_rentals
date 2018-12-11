@@ -16,8 +16,8 @@ include_once("config.php");
 if (!empty($_POST)) {
     $id=$_POST['id'];
     $car_name=$_POST['car_name'];
-    $car_mileage =$_POST['car_mileage'];
-    $company_name = $_POST['car_company'];
+    $car_mileage =$_POST['mileage'];
+    $company_name = $_POST['company_name'];
     $car_year = $_POST['year'];
     $rate = $_POST['rate'];
     $availability = $_POST['availability'];
@@ -38,7 +38,8 @@ $allusers = getCar($id);
 
 <html>
 <head>
-    <title>Display Car</title>
+    <title>Update Car</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -63,44 +64,47 @@ $allusers = getCar($id);
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
         <table>
             <tr>
-                <td><label> ID </label></td>
+                <th><label> ID </label></th>
                 <td> <input type="text" value="<?php echo $id?>"  name="id" readonly></td>
             </tr>
             <tr>
-                <td><label>Car Name </label></td>
+                <th><label>Car Name </label></th>
                 <td> <input type="text" value="<?php echo $car_name ?>"  name="car_name" ></td>
             </tr>
             <tr>
-                <td> <label>Car Number </label></td>
+                <th> <label>Car Number </label></th>
                 <td><input type="text" value="<?php echo $car_number ?>" name="car_number" ></td>
             </tr>
             <tr>
-                <td><label>Company Name </label></td>
+                <th><label>Company Name </label></th>
                 <td><input type="text" value="<?php echo $company_name ?>" name="company_name" ></td>
             </tr><tr>
-                <td><label>Rate Per Day</label></td>
+                <th><label>Rate Per Day</label></th>
                 <td><input type="text " value="<?php echo $rate?>" name="rate" ></td>
             </tr>
             <tr>
-                <td> <label>Car Type </label></td>
+                <th> <label>Car Type </label></th>
                 <td> <input type="text" value="<?php echo $type?>" name="type" ></td>
             </tr>
             <tr>
-                <td> <label>Availability</label></td>
+                <th> <label>Availability</label></th>
                 <td> <input type="text" value="<?php echo $availability?>" name="availability" ></td>
             </tr>
             <tr>
-                <td> <label>Year</label></td>
+                <th> <label>Year</label></th>
                 <td> <input type="text" value="<?php echo $year?>" name="year" ></td>
             </tr>
             <tr>
-                <td> <label>Car Mileage</label></td>
+                <th> <label>Car Mileage</label></th>
                 <td> <input type="text" value="<?php echo $car_mileage ?>" name="mileage" ></td>
             </tr>
 
-            <tr><td><input type="submit" name="update"></td></tr>
 
         </table>
+        <input type="submit" value="UPDATE" class="button">
+        <br>
+        <a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a>
+
     </form>
 
 

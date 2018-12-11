@@ -438,23 +438,23 @@ function deleteUser($id)
     return $result;
 }
 
-function updateUser($fname, $lname, $city, $zip, $dob, $email, $userid)
+function updateUser($userid,$username, $first_name, $last_name, $email, $password, $active)
 {
     global $mysqli, $db_table_prefix;
     $stmt = $mysqli->prepare(
         "UPDATE " . $db_table_prefix . "userdetails
 		SET
+		UserName = ?,
 		FirstName = ?,
 		LastName = ?,
-		City = ?,
-		Zip = ?,
-		DateOfBirth = ?,
-		EmailAddress = ?
+		Email = ?,
+		Password = ?,
+		Active = ?
 		WHERE
 		userid = ?
 		LIMIT 1"
     );
-    $stmt->bind_param("sssssss", $fname, $lname, $city, $zip, $dob, $email, $userid);
+    $stmt->bind_param("sssssii", $username, $first_name, $last_name, $email, $password, $active, $userid);
     $result = $stmt->execute();
     $stmt->close();
 
@@ -465,11 +465,34 @@ function getUser($userid)
 {
     global $mysqli, $db_table_prefix;
     $stmt = $mysqli->prepare(
-        "Select * from userdetails WHERE userid= ? "
+        "Select 
+        UserName,
+        FirstName,
+        LastName,
+        Email,
+        Password,
+        Active
+        from userdetails WHERE userid= ? "
     );
     $stmt->bind_param("s",  $userid);
     $result = $stmt->execute();
-    $stmt->close();
 
-    return $result;
+    $stmt->bind_result(
+        $username,$first_name, $last_name, $email, $password, $active
+    );
+    while($stmt->fetch())
+    {
+        $row[] = array(
+            'userid'=>$userid,
+            'username'=>$username,
+            'first_name'=>$first_name,
+            'last_name'=>$last_name,
+            'email'=>$email,
+            'password'=>$password,
+            'active'=>$active
+        );
+    }
+    $stmt->close();
+    return $row;
 }
+

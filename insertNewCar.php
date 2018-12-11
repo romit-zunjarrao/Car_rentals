@@ -27,6 +27,10 @@ if (!empty($_POST)) {
 ?>
 
 <html>
+<head>
+    <title>Insert New Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
         <table>
@@ -61,10 +65,11 @@ if (!empty($_POST)) {
                 <td><label>Availability</label></td>
                 <td><input type="text" name="availability"></td>
             </tr>
-            <tr>
-                <td><input type="submit" value="Add "></td>
-            </tr>
+
         </table>
+        <input type="submit" value="Add " class="button">
+        <a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a>
+
     </form>
 </body>
 </html>

@@ -8,14 +8,18 @@
 ?>
 
 <html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <table>
+        <th> ADMINISTRATOR </th>
         <tr>
             <td> Manage User </td>
-            <td><a>View List</a></td>
-            <td><a> Insert </a></td>
-            <td><a> Update </a></td>
-            <td><a> Delete </a></td>
+            <td><a href="ManageUser.php">View List</a></td>
+            <td><a href="insertNewUser.php"> Insert </a></td>
+            <td><a href="updateUser.php"> Update </a></td>
+            <td><a href="deleteUser.php"> Delete </a></td>
         </tr>
         <tr>
             <td> Manage Car </td>

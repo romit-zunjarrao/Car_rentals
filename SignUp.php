@@ -1,15 +1,7 @@
 <?php
 
 require_once("config.php");
-//Prevent the user visiting the logged in page if he/she is already logged in
-/*if (isUserLoggedIn()) {
-    header("Location: myaccount.php");
-    die();
-}*/
 
-print_r($_POST);
-
-//Forms posted
 if (!empty($_POST)) {
     $errors = array();
     $email = trim($_POST["email"]);
@@ -54,18 +46,27 @@ if (!empty($_POST)) {
     //End data validation
     if (count($errors) == 0) {
         $user = createNewUser($username, $firstname, $lastname, $email, $password);
-        print_r($user);
+
         if ($user <> 1) {
             $errors[] = "registration error";
         }
     }
     if (count($errors) == 0) {
         $successes[] = "registration successful";
+        header("Location: http://localhost/Final%20Project/login.php");
+        die();
     }
+    else
+        print_r($errors);
 }
 
 //require_once("header.php");
 ?>
+<html>
+<head>
+    <title>Insert New Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 <div id="wrapper">
@@ -74,11 +75,6 @@ if (!empty($_POST)) {
 
 
         <div id="main">
-
-                        <pre>
-                            <?php print_r($errors); ?>
-                            <?php print_r($successes); ?>
-                        </pre>
 
             <div id="regbox">
 
@@ -107,10 +103,13 @@ if (!empty($_POST)) {
                         <label>Email:</label>
                         <input type="text" name="email"/>
                     </p>
-                    <label></label>&nbsp;
-                    <br>
-                    <input type="submit" value="Register"/>
-                    </p>
+
+
+
+                   <center> <input type="submit" value="SIGN UP" class="button">
+                    <a href="login.php"><input type="button" value="Go Back Login Page" class="button"></a></center>
+
+
                 </form>
 
             </div>

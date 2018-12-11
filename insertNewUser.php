@@ -23,6 +23,8 @@ if (!empty($_POST)) {
 ?>
 
 <html>
+<title>Insert New User</title>
+<link rel="stylesheet" href="style.css">
 <body>
 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
     <table>
@@ -50,10 +52,11 @@ if (!empty($_POST)) {
             <td><input type="text" name="active"></td>
         </tr>
 
-        <tr>
-            <td><input type="submit" value="Add "></td>
-        </tr>
+
     </table>
+    <input type="submit" value="Add " class="button">
+    <a href="managePage.php"><input type="button" value="Go Back Main Menu" class="button"></a>
+
 </form>
 </body>
 </html>

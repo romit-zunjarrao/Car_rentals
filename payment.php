@@ -24,7 +24,7 @@ $_SESSION['car'] = $car;
             </tr>
             <tr>
                 <td> <label>Card Number</label></td>
-                <td><input type="number"  name="card_number" ></td>
+                <td><input type="text"  name="card_number" ></td>
             </tr>
             <tr>
                 <td><label>CVV</label></td>

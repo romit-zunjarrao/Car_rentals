@@ -17,11 +17,12 @@ $id= $_GET["id"];
 $allusers = getCar($id);
 
 ?>
-<pre><?php print_r($allusers); ?></pre>
+
 
 <html>
 <head>
-    <title>Display Car</title>
+    <title>Car Selection</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -56,7 +57,7 @@ $allusers = getCar($id);
                 <td><input type="text" value="<?php echo $company_name ?>" name="company_name" readonly></td>
             </tr><tr>
                 <td><label>Rate Per Day</label></td>
-                <td><input type="text " value="<?php echo $rate?>" name="rate" readonly></td>
+                <td><input type="text" value="<?php echo $rate?>" name="rate" readonly></td>
             </tr>
             <tr>
                 <td> <label>Car Type </label></td>
@@ -70,12 +71,12 @@ $allusers = getCar($id);
                 <td><label>Select Date</label></td>
                 <td><input type="date" ></td>
             </tr>
-            <tr>
 
-                <td><input type="submit"></td>
-            </tr>
 
         </table>
+        <input type="submit" value="SELECT" class="button">
+        <a href="display_car.php"><input type="button" value="Go Back Car List" class="button"></a>
+
     </form>
 
 
